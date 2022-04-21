@@ -17,11 +17,11 @@ const registerCompanyUserSchema = new Schema({
         maxlength: [150, "apellidos: máximo 150 caracteres"],
         minlength: [3, "apellidos: mínimo 3 caracteres"]
       },
-      doc:{
-        type: String,
-        required: true,
-        // op: ["Cedula_Colombiana", "Cedula_Extranjera", "Nit"]
-      },
+      // doc:{
+      //   type: String,
+      //   required: true,
+      //   // op: ["Cedula_Colombiana", "Cedula_Extranjera", "Nit"]
+      // },
       idUsuario:{
         type: Number,
         unique: true,

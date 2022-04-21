@@ -1,7 +1,7 @@
 const {check} = require('express-validator')
 const {validateResult} = require('../helpers/validateHelpers')
 
-const validateRegister = [//nombres,apellidos,idUsuario,telefono,correo,username,passwordUser,company
+const validateRegister = [//nombres,apellidos,idUsuario,telefono,correo,username,passwordUser
     check('nombres')  
         .exists()
         .not()
@@ -33,9 +33,11 @@ const validateRegister = [//nombres,apellidos,idUsuario,telefono,correo,username
         .not()
         .isEmpty()
         .isLength({ min:6}),
-    check('company'),
+    check('company')
+        .exists()
+        .not()
+        .isEmpty(),
     // falta esta validación*******************************
-
     (req,res,next)=>{
         validateResult(req,res,next)
     }

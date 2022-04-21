@@ -11,7 +11,6 @@ const bodyparser = require('body-parser')
 //Requerir la db
 require('./database')
 
-
 //Configurar el puerto
 app.set('Port', process.env.PORT || 3000)
 app.use(morgan('dev'))

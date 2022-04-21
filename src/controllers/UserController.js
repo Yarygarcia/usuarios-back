@@ -2,6 +2,7 @@ const userCtrl = {}
 const User = require('../models/user')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+
 // const { validationResult } = require('express-validator')
 
 
@@ -132,13 +133,13 @@ userCtrl.listar = async (req,res)=>{
 userCtrl.eliminar = async (req,res)=>{
 
     try {
-        const idUsuario = req.params.idUsuario
-        if(!idUsuario){
+        const id = req.params.id
+        if(!id){
             res.json({
                 mensage: "El item no existe"
             })
         }
-        await  User.findByIdAndRemove({idUsuario:idUsuario})
+        await  User.findByIdAndRemove({_id:id})
         res.json({
             mensage: "Item eliminado"
         })
@@ -153,10 +154,10 @@ userCtrl.eliminar = async (req,res)=>{
 //Actualizar usuarios
 userCtrl.actualizar = async (req,res)=>{
     try {  
-        const idUsuario = req.params.idUsuario
-        if(idUsuario){
+        const id = req.params.id
+        if(id){
   
-          await  User.findByIdAndUpdate({idUsuario:idUsuario},req.body)
+          await  User.findByIdAndUpdate({_id:id},req.body)
           res.json({
               mensage: "Item actualizado"
           })
