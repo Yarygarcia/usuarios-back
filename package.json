@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@babel/core": "^7.17.9",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.1",
     "connect-flash": "^0.1.1",
@@ -18,10 +19,9 @@
     "nodemon": "^2.0.15"
   },
   "scripts": {
-    "start": "babel-node index.js --exec" ,
+    "start": "babel-node index.js --exec",
     "dev": "nodemon  src/index.js"
   },
   "author": "",
   "license": "ISC"
 }
-
