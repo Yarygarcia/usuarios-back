@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose')
 
-URI =('mongodb+srv://yary_garciaq:bUtUUauXcAyXgTpJ.ñ@cluster0.asnuf.mongodb.net/integralmente')
+URI =("mongodb+srv://yary_garciaq:bUtUUauXcAyXgTpJ.ñ@cluster0.asnuf.mongodb.net/integralmente")
 mongoose.connect(URI,{
     useNewUrlParser: true,
     useUnifiedTopology: true
